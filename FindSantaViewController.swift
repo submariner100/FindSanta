@@ -22,8 +22,6 @@ class FindSantaViewController: UIViewController {
      
      private var mapManager: MapManager!
      
-
-
      override func viewDidLoad() {
           super.viewDidLoad()
           
@@ -41,13 +39,38 @@ class FindSantaViewController: UIViewController {
           
           if let santa = santas.first {
                
-               // update the map
-               mapManager.update(with: santa)
+               santa.addObserver(self)
+          }
+     }
+     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+          if let santa = object as? Santa {
+               update(with: santa)
                
+          } else {
+               super.observeValue(forKeyPath: keyPath, of: object, change: change, context: context)
+          }
+     }
+
+     private func update(with santa: Santa) {
+          mapManager.update(with: santa)
+          let activity = santa.activity.description
+          let presentsRemaining = "\(santa.presentsRemaining)"
+          DispatchQueue.main.async {
+               self.activityLabel.text = activity
+               self.presentsRemainingLabel.text = presentsRemaining
           }
      }
 
      
-
+     
+     deinit {
+          let realm = try! Realm()
+          let santas = realm.objects(Santa.self)
+          if let santa = santas.first {
+               santa.removeObserver(self)
+          }
+     }
 }
+
+
 

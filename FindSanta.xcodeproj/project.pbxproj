@@ -15,6 +15,8 @@
 		271A84021DF7995C000831AC /* MapManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271A84011DF7995C000831AC /* MapManager.swift */; };
 		271A84041DF79964000831AC /* FindSantaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271A84031DF79964000831AC /* FindSantaViewController.swift */; };
 		271A84061DF7996A000831AC /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271A84051DF7996A000831AC /* Location.swift */; };
+		27C28E171DFF173400EB9A9A /* Stop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C28E161DFF173400EB9A9A /* Stop.swift */; };
+		27C28E191DFF1D3B00EB9A9A /* Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C28E181DFF1D3B00EB9A9A /* Activity.swift */; };
 		27E00FCF1DF79B80001CC710 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27E00FCE1DF79B80001CC710 /* MapKit.framework */; };
 		9E4D64990982CCF5EB47A113 /* Pods_FindSanta.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC5B8DFC37C22A03CC579794 /* Pods_FindSanta.framework */; };
 /* End PBXBuildFile section */
@@ -30,6 +32,8 @@
 		271A84011DF7995C000831AC /* MapManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MapManager.swift; path = ../MapManager.swift; sourceTree = "<group>"; };
 		271A84031DF79964000831AC /* FindSantaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindSantaViewController.swift; sourceTree = SOURCE_ROOT; };
 		271A84051DF7996A000831AC /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Location.swift; path = ../Location.swift; sourceTree = "<group>"; };
+		27C28E161DFF173400EB9A9A /* Stop.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stop.swift; sourceTree = "<group>"; };
+		27C28E181DFF1D3B00EB9A9A /* Activity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Activity.swift; sourceTree = "<group>"; };
 		27E00FCE1DF79B80001CC710 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		E3C1C0329935A1D7A0A059C9 /* Pods-FindSanta.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FindSanta.release.xcconfig"; path = "Pods/Target Support Files/Pods-FindSanta/Pods-FindSanta.release.xcconfig"; sourceTree = "<group>"; };
 		EC5B8DFC37C22A03CC579794 /* Pods_FindSanta.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FindSanta.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -105,6 +109,8 @@
 				271A83FF1DF79956000831AC /* Santa.swift */,
 				271A84011DF7995C000831AC /* MapManager.swift */,
 				271A84051DF7996A000831AC /* Location.swift */,
+				27C28E161DFF173400EB9A9A /* Stop.swift */,
+				27C28E181DFF1D3B00EB9A9A /* Activity.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -272,9 +278,11 @@
 			files = (
 				271A84021DF7995C000831AC /* MapManager.swift in Sources */,
 				271A83E71DF7982D000831AC /* AppDelegate.swift in Sources */,
+				27C28E191DFF1D3B00EB9A9A /* Activity.swift in Sources */,
 				271A84001DF79956000831AC /* Santa.swift in Sources */,
 				271A84061DF7996A000831AC /* Location.swift in Sources */,
 				271A84041DF79964000831AC /* FindSantaViewController.swift in Sources */,
+				27C28E171DFF173400EB9A9A /* Stop.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
