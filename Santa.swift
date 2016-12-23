@@ -98,14 +98,14 @@ class Santa: Object {
 
  }
 
- extension Santa {
-     
-     static func test() -> Santa {
-          let santa = Santa()
-          santa.currentLocation = Location(latitude: 52.639042, longitude: -1.389956)
-          santa.activity = .unknown
-          santa.presentsRemaining = 7682
-          return santa
-          
-     }
-}
+// extension Santa {
+//     
+//     static func test() -> Santa {
+//          let santa = Santa()
+//          santa.currentLocation = Location(latitude: 52.639042, longitude: -1.389956)
+//          santa.activity = .unknown
+//          santa.presentsRemaining = 7682
+//          return santa
+//          
+//     }
+//}

@@ -15,6 +15,7 @@
 		271A84021DF7995C000831AC /* MapManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271A84011DF7995C000831AC /* MapManager.swift */; };
 		271A84041DF79964000831AC /* FindSantaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271A84031DF79964000831AC /* FindSantaViewController.swift */; };
 		271A84061DF7996A000831AC /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271A84051DF7996A000831AC /* Location.swift */; };
+		27B7402E1E0C5ECF0047F51A /* SantaRealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B7402D1E0C5ECF0047F51A /* SantaRealmManager.swift */; };
 		27C28E171DFF173400EB9A9A /* Stop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C28E161DFF173400EB9A9A /* Stop.swift */; };
 		27C28E191DFF1D3B00EB9A9A /* Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C28E181DFF1D3B00EB9A9A /* Activity.swift */; };
 		27E00FCF1DF79B80001CC710 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27E00FCE1DF79B80001CC710 /* MapKit.framework */; };
@@ -32,6 +33,8 @@
 		271A84011DF7995C000831AC /* MapManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MapManager.swift; path = ../MapManager.swift; sourceTree = "<group>"; };
 		271A84031DF79964000831AC /* FindSantaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindSantaViewController.swift; sourceTree = SOURCE_ROOT; };
 		271A84051DF7996A000831AC /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Location.swift; path = ../Location.swift; sourceTree = "<group>"; };
+		27B7402D1E0C5ECF0047F51A /* SantaRealmManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SantaRealmManager.swift; sourceTree = "<group>"; };
+		27B7402F1E0C7FE30047F51A /* FindSanta.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FindSanta.entitlements; sourceTree = "<group>"; };
 		27C28E161DFF173400EB9A9A /* Stop.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stop.swift; sourceTree = "<group>"; };
 		27C28E181DFF1D3B00EB9A9A /* Activity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Activity.swift; sourceTree = "<group>"; };
 		27E00FCE1DF79B80001CC710 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
@@ -74,6 +77,7 @@
 		271A83E51DF7982D000831AC /* FindSanta */ = {
 			isa = PBXGroup;
 			children = (
+				27B7402F1E0C7FE30047F51A /* FindSanta.entitlements */,
 				271A83FE1DF798B1000831AC /* Utils */,
 				271A83FD1DF798A2000831AC /* Constants */,
 				271A83FC1DF7989B000831AC /* Model */,
@@ -85,6 +89,7 @@
 				271A83ED1DF7982D000831AC /* Assets.xcassets */,
 				271A83EF1DF7982E000831AC /* LaunchScreen.storyboard */,
 				271A83F21DF7982E000831AC /* Info.plist */,
+				27B7402D1E0C5ECF0047F51A /* SantaRealmManager.swift */,
 			);
 			path = FindSanta;
 			sourceTree = "<group>";
@@ -177,7 +182,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0810;
-				LastUpgradeCheck = 0810;
+				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = "Chappy-App";
 				TargetAttributes = {
 					271A83E21DF7982D000831AC = {
@@ -185,6 +190,9 @@
 						DevelopmentTeam = 4WU9L65MXB;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
 							com.apple.Maps.iOS = {
 								enabled = 1;
 							};
@@ -281,6 +289,7 @@
 				27C28E191DFF1D3B00EB9A9A /* Activity.swift in Sources */,
 				271A84001DF79956000831AC /* Santa.swift in Sources */,
 				271A84061DF7996A000831AC /* Location.swift in Sources */,
+				27B7402E1E0C5ECF0047F51A /* SantaRealmManager.swift in Sources */,
 				271A84041DF79964000831AC /* FindSantaViewController.swift in Sources */,
 				27C28E171DFF173400EB9A9A /* Stop.swift in Sources */,
 			);
@@ -318,6 +327,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -367,6 +377,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -396,6 +407,7 @@
 			baseConfigurationReference = F4ED2DD2F271024F873ABEAF /* Pods-FindSanta.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = FindSanta/FindSanta.entitlements;
 				DEVELOPMENT_TEAM = 4WU9L65MXB;
 				INFOPLIST_FILE = FindSanta/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -410,6 +422,7 @@
 			baseConfigurationReference = E3C1C0329935A1D7A0A059C9 /* Pods-FindSanta.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = FindSanta/FindSanta.entitlements;
 				DEVELOPMENT_TEAM = 4WU9L65MXB;
 				INFOPLIST_FILE = FindSanta/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

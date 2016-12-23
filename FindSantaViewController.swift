@@ -11,7 +11,9 @@ import MapKit
 import RealmSwift
 
 
-class FindSantaViewController: UIViewController {
+class FindSantaViewController: UIViewController, MKMapViewDelegate {
+
+     
 
 
      @IBOutlet private weak var timeRemainingLabel: UILabel!
@@ -22,26 +24,59 @@ class FindSantaViewController: UIViewController {
      
      private var mapManager: MapManager!
      
+     private let realmManager = SantaRealmManager()
+     
+     private var notificationToken: NotificationToken?
+     
+     private var santa: Santa?
+     
+     
      override func viewDidLoad() {
           super.viewDidLoad()
           
+          
+          // Set up the map manager
           mapManager = MapManager(mapView: mapView)
           
-          let realm = try! Realm()
-          let santas = realm.objects(Santa.self)
           
-          if santas.isEmpty {
-               try? realm.write {
-                    realm.add(Santa.test())
                     
+          
+          // Find the Santa data in Realm
+          
+          realmManager.logIn {
+               
+               if let realm = self.realmManager.realm() {
+                    let santas = realm.objects(Santa.self)
+                    
+                   // Has Santa's info already been downloaded?
+                   
+               if let santa = santas.first {
+                    //Yep,  so just use it
+                    self.santa = santa
+                    santa.addObserver(self)
+                 
+               } else {
+                    
+               self.notificationToken = santas.addNotificationBlock {
+                    
+                    _ in
+                    let santas = realm.objects(Santa.self)
+                    if let santa = santas.first {
+                         self.notificationToken?.stop()
+                         self.notificationToken = nil
+                         self.santa = santa
+                         santa.addObserver(self)
+                         }
+                    }
                }
           }
-          
-          if let santa = santas.first {
-               
-               santa.addObserver(self)
-          }
      }
+}
+
+     deinit {
+          santa?.removeObserver(self)
+     }
+     
      override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
           if let santa = object as? Santa {
                update(with: santa)
@@ -63,13 +98,13 @@ class FindSantaViewController: UIViewController {
 
      
      
-     deinit {
-          let realm = try! Realm()
-          let santas = realm.objects(Santa.self)
-          if let santa = santas.first {
-               santa.removeObserver(self)
-          }
-     }
+//     deinit {
+//          let realm = realmManager.realm()
+//          let santas = realm.objects(Santa.self)
+//          if let santa = santas.first {
+//               santa.removeObserver(self)
+//          }
+//     }
 }
 
 
